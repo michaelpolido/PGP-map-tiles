@@ -1,0 +1,254 @@
+Map {
+  background-color: #b8dee6;
+}
+#countries[SOVEREIGNT!='Philippines']{
+    ::outline {
+    line-color: #85c5d3;
+    line-width: 1;
+    line-join: round;
+  }
+  polygon-fill: #fff;
+  polygon-opacity: .4
+}
+#hillshade-clip{  
+  raster-opacity:.3;
+  raster-scaling:lanczos;
+}
+#hillshade{
+  raster-opacity: .3;
+}
+#dem3785relief{
+  raster-opacity:1; 
+}
+#hill-shade{
+  raster-opacity:.3;
+}/*
+#adminbndprov[zoom>=15]{
+  polygon-fill: #ede4c7;
+}*/
+#waterbody50k[zoom<=14],#waterbody10k[zoom>=12]{
+  ::outline {line-color: #c7e0ed;line-width: 0.5;line-join: round;
+  }
+  polygon-fill: #b8dee6;
+}
+#airport10k{
+  [type="1"]{polygon-fill: #ded7ca;}
+  [type="2"]{polygon-fill: #ab9e89;}
+}
+#airport50k[zoom<=14]{
+  [type="1"]{polygon-fill: #ded7ca;}
+  [type="2"]{polygon-fill: #ab9e89;}
+}
+
+#spotelevation250k [zoom>=10][zoom<=14]{marker-width:1;}
+
+#elecutilityline10k[zoom>=12],#elecutilityline50k[zoom>=12]{
+  ::line, ::hatch { line-color: #777; }
+  ::line { line-width:1; }
+  ::hatch {
+    line-width: 3;
+    line-dasharray: 1, 24;line-offset: -1.5;
+  }
+}
+#railroad50k[zoom>=9][zoom<=14],#railroad10k[zoom>=9]{
+  ::line, ::hatch { line-color: #777; }
+  ::line { line-width:1; }
+  ::hatch {
+    line-width: 4;
+    line-dasharray: 1, 24;
+  }
+}
+#coastalarea50k[zoom<=14]{  
+  [type='1']{
+    polygon-fill: #c7e0ed;
+    polygon-pattern-opacity: .5;
+    polygon-pattern-file:url(images/sand.png)}  
+}
+#contour250k[zoom>=10][zoom<=18]{
+   [elevation>=1][elevation<=2900]{line-width: .4;line-color: #a8946c;}
+ }
+#contour50k[zoom>=14]{
+  [index2='0']{
+    line-width: .4;line-color: #a8946c;}
+  [index2='1']{
+    line-width:1.2;line-color: #a8946c;}
+}
+#contour10k{
+  [zoom=14]{
+    [Index2=0][Elevation!=0][Length>500]{line-width:.4;line-color: #a8946c;}
+    [Index2=1][Elevation!=0][Length>500]{line-width:1;line-color: #a8946c;}
+  }
+  [zoom=15]{
+    [Index1=0][Elevation!=0][Length>500]{line-width:.4;line-color: #a8946c;}
+    [Index1=1][Elevation!=0][Length>500]{line-width:1;line-color: #a8946c;}
+  }
+  [zoom=16]{
+  	[Index1=0][Elevation!=0][Length>200]{line-width:.4;line-color: #a8946c;}
+  	[Index1=1][Elevation!=0][Length>200]{line-width:1;line-color: #a8946c;}
+  }
+  [zoom=17]{
+    [Elevation!=0][Length>50]{line-width:.4;line-color: #a8946c;}
+    [Elevation!=0][Length>50]{line-width:1;line-color: #a8946c;}
+  }
+  [zoom=18]{
+    [Elevation!=0]{line-width:.4;line-color: #a8946c;}
+    [Elevation!=0]{line-width:1;line-color: #a8946c;}
+  }
+}
+#landmarkpoly10k,#landmarkpoly50k[zoom<=14]{
+  [zoom>=10]{
+    [class="6"]{polygon-fill: #98cf51;}
+    [class="8"]{polygon-fill: #a8fca7;}
+    [class="10"]{polygon-fill: #9ce899;}
+}
+  [zoom>=13]{
+    [class="7"]{polygon-fill: #f5f59f;}
+    [class="1"]{polygon-fill: #f59e93;}
+    [class="3"]{polygon-fill: #d68aff;}
+    [class="5"],[class="11"]{polygon-fill: #c7ab7f;}
+    [class="4"]{polygon-fill: #abbbf5;}
+    [class="9"]{polygon-fill: #b4a6ed;}
+    [class="12"]{polygon-fill: #faefd7;}
+    [class="2"]{polygon-fill: #e6e65c;}
+ }
+}  
+#miningarea50k[zoom<=14]{
+  polygon-fill: #cfa38f;
+}
+#hdshoalobstruction[zoom>=9]{
+  marker-file:url(images/hdobstruction.png);
+  marker-width: 12;
+}
+#hdwreck[zoom>=9]{
+  marker-file:url(images/wreck.png);
+  marker-width: 12;
+}
+#buildingfootprint50k[zoom>=12][zoom<=14]{
+  polygon-fill: #9c9c9c;
+}
+#seaport50k[zoom<=14],#seaport10k{
+  polygon-fill: #ded7ca;  
+}
+#marinehazard50k{
+  [category="1"]{polygon-pattern-file:url(images/corals.png)}
+  [category="2"]{polygon-pattern-opacity: .3;polygon-pattern-file:url(images/sand.png)}
+  [category="3"]{polygon-fill: #c7e0ed;}
+}
+#commutility50k[zoom>=13]{
+  marker-file:url(images/commutility.png);
+  marker-width: 20;
+}
+#hdbuoys[zoom>=12]{
+  [class="1"]{marker-file:url(images/lighted.png);marker-width: 12;}
+  [class="2"]{marker-file:url(images/unlighted.png);marker-width: 12;}
+}
+#hdlighthouse[zoom>=12]{
+  marker-width:12;marker-file:url(images/lighthouse.png);
+}
+#waterline50k[zoom>=12][zoom<=14]{
+  [type="6"],[type="7"],[type="10"]{line-width: .4;line-color: #c7e0ed;line-dasharray: 8, 10;}
+  [type="5"],[type="8"],[type="9"]{line-width: 1;line-color: #c7e0ed;}
+}
+
+#waterline10k{
+  [zoom>=14][zoom<=15]{
+  	[type='6'],[type='7'],[type='10']{line-width: .1;line-color: #b8dee6;line-dasharray: 8, 10;}
+  	[type='5'],[type='8'],[type='9']{line-width:.1;line-color: #b8dee6;}
+    }
+  [zoom>=16]{
+    [type="6"],[type="7"],[type="10"]{line-width: .1;line-color: #b8dee6;line-dasharray: 8, 10;}
+  	[type="5"],[type="8"],[type="9"]{line-width: .1;line-color: #b8dee6;}
+    }    
+}
+#waterinfra50k[zoom>=12][zoom<=14]{
+  [type="1"]{line-width: 1.5;line-color: #c7e0ed;}
+  [type="2"]{line-width: 1.5;line-color: #c7e0ed;}
+  [type="3"],[type="5"]{line-width: 1.5;line-color: #b2b2b2;}
+  [type="4"]{::line, ::hatch { line-color: #ccb8b8; }
+             ::line { line-width:1; }
+             ::hatch {
+   			 line-width: 4;
+    	     line-dasharray: 1, 10;}
+			}
+}
+#pipeline50k[zoom>=12][zoom<=14]{  
+  [location="1"]{line-width: 1.5;line-color: #828282;}
+}
+#railstation10k[zoom>=14]{
+  marker-width:15;marker-file:url(images/railstation.png);
+}
+#oceanlbl{
+  marker-line-color: #fff;marker-width: 0;
+
+#landmarkpoint50k[zoom>=13][zoom<=14]{
+  marker-line-color: gray;
+  marker-fill: gray; 
+  marker-width: 1;
+}
+
+#adminlblmunic{
+  [zoom>=5][zoom<10]{
+  [level=1]{  
+    marker-line-color: #e0c879;
+    marker-fill: #e0c879;
+    marker-width:6;}
+  }
+  [zoom>=7][zoom<10]{
+  [level=2]{
+    marker-line-color: #e0c879;
+    marker-fill: #e0c879;
+   	marker-width:5;}
+  [level=3]{
+    marker-line-color: #e0c879;
+    marker-fill: #e0c879;
+    marker-width:4;}
+  }
+}
+#buildingfootprint10k{
+  [zoom=12][area>3000]{polygon-fill: #9c9c9c;}
+  [zoom=13][area>1500]{polygon-fill: #9c9c9c;}
+  [zoom=14][area>100]{polygon-fill: #9c9c9c;}
+  [zoom>=15]{polygon-fill: #cccccc;line-color: #9a917b;line-width:.6;}
+  [zoom>=15]{
+    [buildingclass='1']{polygon-fill: #cccccc;line-color: #9a917b;line-width:.6;}
+    [buildingclass='2']{polygon-fill: #d6c8ab;line-color: #9a917b;line-width:.6;}
+    [buildingclass='3']{polygon-fill: #c6d0f5;line-color: #879af6;line-width:.6;}
+    [buildingclass='4']{polygon-fill: #e4b3ff;line-color: #e794ff;line-width:.6;}
+    [buildingclass='5']{polygon-fill: #ffebaf;line-color: #cdbe8d;line-width:.4;}
+    [buildingclass='6']{polygon-fill: #e6e68a;line-color: #cac300;line-width:.6;}
+    [buildingclass='7']{polygon-fill: #c9e8c8;line-color: #9ab39a;line-width:.6;}
+    [buildingclass='8']{polygon-fill: #d1baba;line-color: #b376a9;line-width:.6;}
+    [buildingclass='9']{polygon-fill: #f5bfb8;line-color: #ffa9a9;line-width:.6;}
+    [buildingclass='10']{polygon-fill: #d5c8de;line-color: #a693b6;line-width:1;}
+  }
+}
+#landcover{
+  [agg14='Annual Crop'],[agg14='Perennial Crop']{
+    polygon-pattern-file:url(images/crops.png);}
+  [agg14='Built-up']{
+    polygon-fill: #e0c879;}
+  [agg14='Closed Forest']{
+    polygon-fill: #518f36;}
+  [agg14='Open Forest']{
+    polygon-fill: #679e4d;}
+  [agg14='Fallow'],[agg14='Wooded Grassland'],[agg14='Wooded grassland'],[agg14='Shrubs']{
+    polygon-fill: #96bd82;}
+  [agg14='Fishpond']{
+    polygon-fill: #b3e6e2;}  
+  [agg14='Inland Water']{
+    polygon-fill: #b8dee6;}
+  [agg14='Open/Barren']{
+    polygon-pattern-file:url(images/sand.png);}
+  [agg14='Grassland']{
+    polygon-fill: #b0cf9f;}
+   [agg14='Mangrove Forest']{
+    polygon-pattern-file:url(images/mangrove.png);}
+   [agg14='Marshland/Swamp']{
+    polygon-pattern-file:url(images/marsh.png);}
+}
+
+
+#hillshade2 {
+  raster-opacity:1;
+}
+
