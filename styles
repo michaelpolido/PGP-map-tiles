@@ -476,19 +476,20 @@ Map {
   	text-wrap-before: true;
     text-allow-overlap: true;
 }
-#spotelevation250k[zoom>=10]
-{
+#spotelevation250k[zoom>=10][zoom<=18]{
   text-name: [elevation] + 'm';
   text-face-name: 'Arial Regular';
-  text-fill: #000;
-  text-size: 6;
+  text-fill: #000;  
   text-placement-type: simple;
   text-placements: "N,S,E,W,NE,SE,NW,SW";
-  text-allow-overlap: true;
-  text-fill: #000;
-  text-size: 6;
+  text-allow-overlap: true;  
   text-halo-fill: fadeout(white, 30%);
-  text-halo-radius: 0.5;
+  text-halo-radius: 0.7;
+  text-dy: 4;
+  text-dx: 4;
+  text-size: 7;
+  [zoom=10],[zoom=11],[zoom=12]{text-size: 7;}
+  [zoom>=13][zoom<=18]{text-size: 8;}
 }
 #oceanlbl
 {
