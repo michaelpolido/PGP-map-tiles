@@ -468,13 +468,15 @@ Map {
   	text-character-spacing: 14;}
 }
 #oceanlabel[zoom>=5][zoom<=8]{
-  	text-name: [name];
-  	text-face-name: 'Cambria Bold Italic';
-  	text-fill: #509994;
-  	text-size: 14;
-  	text-wrap-width: 30;
-  	text-wrap-before: true;
-    text-allow-overlap: true;
+  text-name: [name];
+  text-face-name: 'Cambria Bold Italic';
+  text-fill: #509994;  
+  text-wrap-width: 30;
+  text-wrap-before: true;     	
+  [zoom=5]{ text-size: 14;text-character-spacing: 8;text-line-spacing: 10;}
+  [zoom=6]{ text-size: 16;text-character-spacing: 20;text-line-spacing: 20;}
+  [zoom=7]{ text-size: 16;text-character-spacing: 25;text-line-spacing: 25;} 
+  [zoom=8]{ text-size: 16;text-character-spacing: 12;text-line-spacing: 10;}
 }
 #spotelevation250k[zoom>=10][zoom<=18]{
   text-name: [elevation] + 'm';
