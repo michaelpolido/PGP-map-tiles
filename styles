@@ -255,20 +255,27 @@ Map {
 */ Road Styles /*
 
 #dpwhmajorinfra{
-  [zoom>=8][zoom<=10]{
+  [zoom>=8][zoom<=11]{
   	[category="1"]{ line-width: 1.5;line-color: #cc6666;}
   	[category="2"]{ line-width: 1.5;line-color:#cc6666;}
   	[category="3"]{ line-width: 1;line-color: #d99a96;}
   	[category="4"]{ line-width: 1;line-color: #d99a96;} 
-  	[category="5"]{ line-width: .2;line-color: #d99a96;}   
+  	[category="5"]{ line-width: 1.5;line-color: #d99a96;}   
 	}
-  [zoom>=11][zoom<=15]{
-  	[category="1"]{ line-width: 2.5;line-color: #cc6666;}
-  	[category="2"]{ line-width: 2.5;line-color:#cc6666;}
-  	[category="3"]{ line-width: 1;line-color: #d99a96;}
+  [zoom=12][region!='14']{
+  	[category="1"]{ line-width: 1.5;line-color: #cc6666;}
+  	[category="2"]{ line-width: 1.5;line-color:#cc6666;}
+  	[category="3"]{ line-width: .4;line-color: #d99a96;}
+  	[category="4"]{ line-width: 1;line-color: #d99a96;} 
+  	[category="5"]{ line-width: 1.5;line-color: #d99a96;}   
+	}
+  [zoom>=13][zoom<=14][region!='14']{
+  	[category="1"]{ line-width: 2;line-color: #cc6666;}
+  	[category="2"]{ line-width: 2;line-color:#cc6666;}
+  	[category="3"]{ line-width: 2;line-color: #d99a96;}
   	[category="4"]{ line-width: 2;line-color: #d99a96;} 
-  	[category="5"]{ line-width: 1;line-color: #d99a96;}   
-	}
+  	[category="5"]{ line-width: 2;line-color: #d99a96;}   
+	} 
 }
 #bridge10k[zoom>=8],#bridge50k[zoom>=8][zoom<=14]{
     line-color: #d77070;
@@ -292,18 +299,27 @@ Map {
     }
 }
 #road50k{
-  [zoom>=9][zoom<=11]{
-    [type="1"]{ line-width: 2;line-color: #cc6666;}
-  	[type="2"]{ line-width: 2;line-color: #d6816f;}
-  	[type="3"]{ line-width: 1.2;line-color: #d99a96;}
+  [type="1"]{
+	[zoom=11],[zoom=12],[zoom=13],[zoom=14]{line-width: 2;line-color: #cc6666;}    
+  } 
+  [type="2"]{
+	[zoom=11]{ line-width: 1;line-color: #d6816f;}
+    [zoom=12],[zoom=13],[zoom=14]{ line-width: 2;line-color: #d6816f;}    
   }
-  [zoom>=12][zoom<=14]{
-    [type="1"]{ line-width: 2;line-color: #cc6666;}
-  	[type="2"]{ line-width: 2;line-color: #d6816f;}
-  	[type="3"]{ line-width: 1.2;line-color: #d99a96;}
-    //[type="4"]{ line-width: 1;line-color: #b2b2b2;}
-	[type="5"]{ line-width: .5;line-color: #b2b2b2;}
- 	[type="8"]{ line-width: 0.57;line-color: #b2b2b2;}
+   [type="3"]{line-color: #d99a96;
+    [zoom=11]{ line-width: 1;line-color: #d99a96;}
+    [zoom=12],[zoom=13],[zoom=14]{ line-width: 1.2;line-color: #d99a96;}
+  }
+  [type="4"]{
+    [zoom=12]{ line-width: 0.4;line-color: #b2b2b2;}
+    [zoom=13],[zoom=14]{ line-width: 1;line-color: #b2b2b2;}
+  }
+  [type="5"]{
+    [zoom=12]{ line-width: 0.4;line-color: #b2b2b2;}
+    [zoom=13],[zoom=14]{ line-width: 0.5;line-color: #b2b2b2;}
+  } 
+  [type="6"]{
+    [zoom=13],[zoom=14]{ line-width: .57;line-color: #b2b2b2;line-dasharray: 10, 4;}
   }
 }
 
