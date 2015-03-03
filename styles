@@ -484,7 +484,6 @@ Map {
   text-fill: #000;  
   text-placement-type: simple;
   text-placements: "N,S,E,W,NE,SE,NW,SW";
-  text-allow-overlap: true;  
   text-halo-fill: fadeout(white, 30%);
   text-halo-radius: 0.7;
   text-dy: 4;
