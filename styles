@@ -848,48 +848,45 @@ Map {
     }  
 }
 #landformlbl{ 
-  [type='4']{
-    [zoom>=11][zoom<=12]{
+  [type='4'][zoom>=11][zoom<=14]{    
     text-name:[name];
     text-face-name: 'Arial Bold Italic';
     text-fill: #000;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-size:8;}
-    [zoom>=12][zoom<=18]{
-    text-name:[name];
-    text-face-name: 'Arial Bold Italic';
-    text-fill: #000;
-    text-halo-fill: fadeout(white, 40%);
-  	text-halo-radius: 1.5;text-size:9;}
-    }
-  [type='8']{
-  	[zoom>=11]{
+    text-transform: uppercase;
+    text-character-spacing: 1;
+    [zoom=11]{text-size:9;}
+    [zoom>=12][zoom<=14]{text-size:10;}    
+  }        
+  [type='8'][zoom>=11][zoom<=14]{  	
     text-name:[name];
     text-face-name: 'Arial Italic';
     text-fill: #000;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-size:8;}
-    }
-  [type='1'],[type='2'],[type='5'],[type='12']{
-  [zoom>=12]{  
+    text-size:8;
+    [zoom=11]{text-size:8;}
+    [zoom>=12][zoom<=14]{text-size:9;} 
+  } 
+  [type='1'][zoom>=12][zoom<=14],[type='12'][zoom>=12][zoom<=14],[type='2'][zoom>=12][zoom<=14],[type='5'][zoom>=12][zoom<=14]{  	
     text-name:[name];
     text-face-name: 'Arial Italic';
     text-fill: #000;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-size:8;}
-    }
-  [type='6'],[type='7'],[type='13']{
-  [zoom>=13]{
+    [zoom=12]{text-size:7;}
+    [zoom>=13][zoom<=14]{text-size:8;} 
+  }
+  [type='13'][zoom>=13][zoom<=14],[type='6'][zoom>=13][zoom<=14],[type='7'][zoom>=13][zoom<=14],{  	
     text-name:[name];
     text-face-name: 'Arial Italic';
     text-fill: #000;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-size:7;}
-    }
+    [zoom=13]{text-size:7;}
+    [zoom=14]{text-size:8;}
+  }
 }
 #buildingfootprint10k-label{
   [zoom=16]{
