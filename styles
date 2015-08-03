@@ -850,33 +850,37 @@ Map {
   	text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
     text-placement: line;
-    text-allow-overlap:false;
-  	[type='1'][name!='UNK']{    
-    [zoom>=15]{text-name:[name];text-size:10;}
+    text-allow-overlap:false;  	
+  	[type='1'][name!='UNK']{
+    text-min-distance: 2000;
+    [zoom=15]{text-name:[name];text-size:10;}
     [zoom=16]{text-name:[name];text-size:11;}
     [zoom=17]{text-name:[name];text-size:12;}
     [zoom=18]{text-name:[name];text-size:13;}
     }
-  	[type='2'][name!='UNK']{    
-    [zoom>=15]{text-name:[name];text-size:10;}
+  	[type='2'][name!='UNK']{
+	text-min-distance: 2000;    
+    [zoom=15]{text-name:[name];text-size:10;}
     [zoom=16]{text-name:[name];text-size:11;}
     [zoom=17]{text-name:[name];text-size:12;}
     [zoom=18]{text-name:[name];text-size:13;}
     }
 	[type='3'][name!='UNK']{
-    [zoom>=15]{text-name:[name];text-size:10;}
+    text-min-distance: 2000;
+    [zoom=15]{text-name:[name];text-size:10;}
+    [zoom=16]{text-name:[name];text-size:10;}
     [zoom=17]{text-name:[name];text-size:11;}
     [zoom=18]{text-name:[name];text-size:12;}    
   	}
 	[type='4'][name!='UNK']{
-    text-face-name: 'Arial Italic';
-    [zoom>=16]{text-name:[name];text-size:8;}
+    text-face-name: 'Arial Italic';text-min-distance: 2000;
+    [zoom=16]{text-name:[name];text-size:8;}
     [zoom=17]{text-name:[name];text-size:9;}  
     [zoom=18]{text-name:[name];text-size:10;}    
   	}
   	[type='5'][name!='UNK']{
-    text-face-name: 'Arial Italic';
-    [zoom>=17]{text-name:[name];text-size:8;}
+    text-face-name: 'Arial Italic';text-min-distance: 2000;
+    [zoom=17]{text-name:[name];text-size:8;}
     [zoom=18]{text-name:[name];text-size:9;}
   	}
 }
@@ -889,6 +893,7 @@ Map {
   text-horizontal-alignment: auto;  
   text-placement-type: simple;
   text-placements: "N,S,E,W,NE,SE,NW,SW";
+  text-min-distance: 50;
   text-dy: 5;
   text-dx: 5;  
 }
@@ -1014,8 +1019,8 @@ Map {
   text-dx: 5;
   text-halo-fill: fadeout(white, 40%);
   text-halo-radius: .7; 
-  [zoom>=5][zoom<=6]{text-size: 11;}
-  [zoom>=7][zoom<=8]{text-size: 12;}
+  [zoom>=5][zoom<=6]{text-size: 12;}
+  [zoom>=7][zoom<=8]{text-size: 13;}
   [zoom>=9][zoom<=11]{text-size: 14;}
   [zoom>=12][zoom<=18]{text-size: 15;}
 }
@@ -1032,7 +1037,7 @@ Map {
   text-dx: 5;
   text-halo-fill: fadeout(white, 40%);
   text-halo-radius: .7;
-  [zoom>=7][zoom<=9]{text-size: 9;}
+  [zoom>=7][zoom<=9]{text-size: 11;}
   [zoom>=10][zoom<=12]{text-size: 12;} 
   [zoom>=13][zoom<=18]{text-size: 14;}	  
 }
@@ -1040,7 +1045,7 @@ Map {
   text-name: [name];
   text-face-name: 'Times New Roman Bold';
   text-fill: #000;
-  text-wrap-width: 30;
+  text-wrap-width: 50;
   text-wrap-before: true; 
   text-horizontal-alignment: auto;  
   text-placement-type: simple;
@@ -1049,11 +1054,11 @@ Map {
   text-dx: 5;
   text-halo-fill: fadeout(white, 40%);
   text-halo-radius: 1;
-  [zoom>=7][zoom<=9]{text-size: 10;}
+  [zoom>=7][zoom<=9]{text-size: 12;}
   [zoom>=10][zoom<=12]{text-size: 13;} 
   [zoom>=13][zoom<=18]{text-size: 15;}
 }
-#municipality [zoom>=10][zoom<=18]{
+#municipality [zoom>=9][zoom<=18]{
   text-name: [name];
   text-face-name: 'Times New Roman Regular';
   text-fill: #000;
@@ -1066,6 +1071,7 @@ Map {
   text-dx: 5;
   text-halo-fill: fadeout(white, 40%);
   text-halo-radius: .7;
+  [zoom=9]{text-size: 10;text-min-distance: 20;}
   [zoom>=10][zoom<=11]{text-size: 10;}
   [zoom>=12][zoom<=13]{text-size: 11;}
   [zoom>=14][zoom<=18]{text-size: 12;text-face-name: 'Times New Roman Bold';}
@@ -1102,7 +1108,8 @@ Map {
     text-allow-overlap:true;
     text-halo-fill: fadeout(white, 40%);
     text-halo-radius: .7;     
-    [zoom>=5][zoom<=8]{text-size: 12;}
+    [zoom>=5][zoom<=6]{text-size: 13;}
+    [zoom>=7][zoom<=8]{text-size: 14;}
     [zoom=9]{text-size: 15;}
     [zoom>=10][zoom<=11]{text-size: 16;}
     [zoom>=12][zoom<=18]{text-size: 17;}
