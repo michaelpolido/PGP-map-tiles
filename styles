@@ -42,36 +42,6 @@ Map {
 #spotelevation250k [zoom>=10][zoom<=18]{marker-width:1;} 
 #spotelevation50k [zoom>=12][zoom<=18]{marker-width:1;}
 
-//#hddepthcurve [zoom>=9]{line-color:#c5ebe7;line-width:.4}
-/*
-#landcover50k
-  [zoom>=10][zoom<=18]
-    {
-  	[type="1"]{polygon-fill: #518f36;}
-  	[type="2"],[type="4"],[type="6"]{polygon-pattern-file:url(images/crops.png)}
-  	[type="3"]{polygon-fill: #7ead66;}
-  	[type="5"]{polygon-fill: #96bd82;}
-  	[type="7"]{polygon-fill: #b0cf9f;}
-  	[type="8"],[type="18"]{polygon-pattern-file:url(images/mangrove.png)} 
-  	[type="9"],[type="10"],[type="11"],[type="13"]{polygon-pattern-file:url(images/sand.png)}
-  	[type="14"]{polygon-fill: #b3e6e3;}
-  	[type="15"]{polygon-pattern-file:url(images/marsh.png)}
-  	[type="16"]{polygon-fill: #e0c879;}
-  	[type="17"]{polygon-fill: #ede4c7;}  
-}
-#landcover10k[zoom>=14]{
-  [type="1"]{polygon-fill: #518f36;}
-  [type="2"],[type="4"],[type="6"]{polygon-pattern-file:url(images/crops.png)}
-  [type="3"]{polygon-fill: #7ead66;}
-  [type="5"]{polygon-fill: #96bd82;}
-  [type="7"]{polygon-fill: #b0cf9f;}
-  [type="8"],[type="18"]{polygon-pattern-file:url(images/mangrove.png)} 
-  [type="9"],[type="10"],[type="11"],[type="13"]{polygon-pattern-file:url(images/sand.png)}
-  [type="14"]{polygon-fill: #b3e6e3;}
-  [type="15"]{polygon-pattern-file:url(images/marsh.png)}
-  [type="16"]{polygon-fill: #e0c879;}
-  [type="17"]{polygon-fill: #ede4c7;}
-}*/
 #elecutilityline10k[zoom>=12],#elecutilityline50k[zoom>=12]{
   ::line, ::hatch { line-color: #777; }
   ::line { line-width:1; }
@@ -145,11 +115,11 @@ Map {
 #miningarea50k[zoom<=14]{
   polygon-fill: #cfa38f;
 }
-#hdshoalobstruction[zoom>=9]{
+#hdshoalobstruction[zoom>=11]{
   marker-file:url(images/hdobstruction.png);
   marker-width: 12;
 }
-#hdwreck[zoom>=9]{
+#hdwreck[zoom>=11]{
   marker-file:url(images/wreck.png);
   marker-width: 12;
 }
@@ -242,12 +212,11 @@ Map {
    }
   }
 }
-#buildingfootprint10k[zoom>=12][zoom<=18]{
+#buildingfootprint10k[zoom>=12][zoom<=18]{  
   [zoom=12][area>3000]{polygon-fill: #9c9c9c;}
   [zoom=13][area>1500]{polygon-fill: #9c9c9c;}
-  [zoom=14][area>1500]{polygon-fill: #9c9c9c;}  
-  [zoom>=15]{
-    [buildingclass='1']{polygon-fill: #e0e0e0;}
+  [zoom=14][area>1500]{polygon-fill: #9c9c9c;}
+  [zoom=15]{     
     [buildingclass='2']{polygon-fill: #d6c8ab;line-color: #9a917b;line-width:.6;}
     [buildingclass='3']{polygon-fill: #c6d0f5;line-color: #879af6;line-width:.6;}
     [buildingclass='4']{polygon-fill: #e4b3ff;line-color: #e794ff;line-width:.6;}
@@ -257,12 +226,26 @@ Map {
     [buildingclass='8']{polygon-fill: #d1baba;line-color: #b376a9;line-width:.6;}
     [buildingclass='9']{polygon-fill: #f5bfb8;line-color: #ffa9a9;line-width:.6;}
     [buildingclass='10']{polygon-fill: #d5c8de;line-color: #a693b6;line-width:1;}
+    [buildingclass='11']{polygon-fill: #a89e8d;line-color: #80786b;line-width:.6;}
   }  
+  [buildingclass='1']{     
+    [zoom=15]{polygon-fill: #cccccc;}   
+  } 
 }
-#buildingfootprint10k-shadow[zoom>=15]{
-  line-color: #b2b2b2;
-  line-opacity: 0.3;
-  line-width: 3;
+
+#building[zoom>=16]{
+  [BuildingCl='1']{building-fill: #e0e0e0;building-height:3;}
+  [BuildingCl='2']{building-fill: #d6c8ab;building-height:3;}
+  [BuildingCl='3']{building-fill: #c6d0f5;building-height:3;}
+  [BuildingCl='4']{building-fill: #e4b3ff;building-height:3;}
+  [BuildingCl='5']{building-fill: #ffebaf;building-height:3;}
+  [BuildingCl='6']{building-fill: #e6e68a;building-height:3;}
+  [BuildingCl='7']{building-fill: #c9e8c8;building-height:3;}
+  [BuildingCl='8']{building-fill: #d1baba;building-height:3;}
+  [BuildingCl='9']{building-fill: #f5bfb8;building-height:3;}
+  [BuildingCl='10']{building-fill: #d5c8de;building-height:3;}
+  [BuildingCl='11']{building-fill: #a89e8d;building-height:3;}
+  building-fill: #e0e0e0;building-height:3;
 }
 
 #landcover[zoom<15]{
@@ -983,7 +966,7 @@ Map {
     text-size: 8;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5; 	
-    text-wrap-width: 40; text-wrap-before: true;}
+    text-wrap-width: 40; text-wrap-before: true;text-min-distance: 40;}
   }
   [zoom=17]{
   	[name!='UNK'][area>1500]{
@@ -993,7 +976,7 @@ Map {
     text-size: 8;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-wrap-width: 40;text-wrap-before: true;}
+    text-wrap-width: 40;text-wrap-before: true;text-min-distance: 40;}
   }
   [zoom=18]{
   	[name!='UNK'][area>400]{
@@ -1003,7 +986,7 @@ Map {
     text-size: 8;
     text-halo-fill: fadeout(white, 40%);
   	text-halo-radius: 1.5;
-    text-wrap-width: 40;text-wrap-before: true;}
+    text-wrap-width: 40;text-wrap-before: true;text-min-distance: 60;}
   }
 }
 #largecity [zoom>=5][zoom<=18]{
