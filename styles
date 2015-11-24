@@ -17,10 +17,10 @@ Map {
   raster-opacity:1; 
 }
 
-#hill-shade[zoom>=5][zoom<=12]{  
+#hillshadeclip[zoom>=5][zoom<=10]{  
   raster-comp-op: soft-light;
 }
-#hillshadeclipped [zoom>=13]{
+#hillshadeclipped [zoom>=11]{
   raster-comp-op: soft-light;
 }
 
@@ -249,30 +249,39 @@ Map {
 }
 
 #landcover[zoom<15]{
-  [agg14='Annual Crop'],[agg14='Perennial Crop']{
+  [AGG14='Annual Crop'],[AGG14='Perennial Crop']{
     polygon-pattern-file:url(images/crops.png);}
-  [agg14='Built-up']{
+  [AGG14='Built-up']{
     polygon-fill: #e0c879;}
-  [agg14='Closed Forest']{
+  [AGG14='Closed Forest']{
     polygon-fill: #518f36;}
-  [agg14='Open Forest']{
+  [AGG14='Open Forest']{
     polygon-fill: #679e4d;}
-  [agg14='Fallow'],[agg14='Wooded Grassland'],[agg14='Wooded grassland'],[agg14='Shrubs']{
+  [AGG14='Fallow'],[AGG14='Wooded Grassland'],[AGG14='Wooded grassland'],[AGG14='Shrubs']{
     polygon-fill: #96bd82;}
-  [agg14='Fishpond']{
+  [AGG14='Fishpond']{
     polygon-fill: #b3e6e2;}  
-  [agg14='Inland Water']{
+  [AGG14='Inland Water']{
     polygon-fill: #b8dee6;}
-  [agg14='Open/Barren']{
+  [AGG14='Open/Barren']{
     polygon-pattern-file:url(images/sand.png);}
-  [agg14='Grassland']{
+  [AGG14='Grassland']{
     polygon-fill: #b0cf9f;}
-   [agg14='Mangrove Forest']{
+   [AGG14='Mangrove Forest']{
     polygon-pattern-file:url(images/mangrove.png);}
-   [agg14='Marshland/Swamp']{
+   [AGG14='Marshland/Swamp']{
     polygon-pattern-file:url(images/marsh.png);}
 }
-
+#bajodemasinloc[zoom<5]{
+  marker-line-color: #e0c879;
+  marker-fill: #e0c879;
+  marker-width:4;
+}
+#benhamrise[zoom<5]{
+  marker-line-color: #e0c879;
+  marker-fill: #e0c879;
+  marker-width:4;
+}
 */ Road Styles /*
 
 #dpwhmajorinfra{
@@ -319,7 +328,7 @@ Map {
     line-dasharray: 10, 4;
     }
 }
-#road50k{
+#road50k[zoom>=11][zoom<=14]{
   [type="1"]{
 	[zoom=11],[zoom=12],[zoom=13],[zoom=14]{line-width: 2;line-color: #cc6666;}    
   } 
@@ -332,23 +341,33 @@ Map {
     [zoom=12],[zoom=13],[zoom=14]{ line-width: 1.2;line-color: #d99a96;}
   }
   [type="4"]{
-    [zoom=12]{ line-width: 0.4;line-color: #b2b2b2;}
-    [zoom=13],[zoom=14]{ line-width: 1;line-color: #b2b2b2;}
+    [zoom=12]{ line-width: 0.4;line-color: #cccccc;}
+    [zoom=13],[zoom=14]{ line-width: 1;line-color: #cccccc;}
   }
   [type="5"]{
-    [zoom=12]{ line-width: 0.4;line-color: #b2b2b2;}
-    [zoom=13],[zoom=14]{ line-width: 0.5;line-color: #b2b2b2;}
+    [zoom=12]{ line-width: 0.4;line-color: #cccccc;}
+    [zoom=13],[zoom=14]{ line-width: 0.5;line-color: #cccccc;}
   } 
   [type="6"]{
-    [zoom=13],[zoom=14]{ line-width: .57;line-color: #b2b2b2;line-dasharray: 10, 4;}
+    [zoom=13],[zoom=14]{ line-width: .57;line-color: #cccccc;line-dasharray: 10, 4;}
   }
 }
 
-#road10k-main{
-  [zoom=14]{
+#road10k-main[zoom>=12][zoom<=18]{
+  [zoom=12]{
+    [type="1"]{ line-width: 2;line-color: #cc6666;line-cap: round;}
+  	[type="2"]{ line-width: 1.5;line-color: #d6816f;line-cap: round;}
+  	[type="3"]{ line-width: 1;line-color: #d99a96;line-cap: round;}
+  }
+  [zoom=13]{
     [type="1"]{ line-width: 2;line-color: #cc6666;line-cap: round;}
   	[type="2"]{ line-width: 2;line-color: #d6816f;line-cap: round;}
   	[type="3"]{ line-width: 1.2;line-color: #d99a96;line-cap: round;}
+  }
+  [zoom=14]{
+    [type="1"]{ line-width: 3.25;line-color: #cc6666;line-cap: round;}
+  	[type="2"]{ line-width: 3.25;line-color: #d6816f;line-cap: round;}
+  	[type="3"]{ line-width: 2.5;line-color: #d99a96;line-cap: round;}
   }
   [zoom=15]{    
     [type="1"]{ line-width: 4;line-color: #cc6666;line-cap: round;}
@@ -371,7 +390,7 @@ Map {
   	[type="2"]{ line-width: 10.5;line-color: #d6816f;line-cap: round;}  	
   }
 }
-#road10k-secondary{
+#road10k-secondary[zoom>=12][zoom<=18]{
   [zoom=12]{
     [type="4"]{ line-width: .4;line-color: #cccccc;line-cap: round;}
   }	
@@ -383,7 +402,7 @@ Map {
  	[type="8"]{ line-width: .5;line-color: #9c9c9c;line-cap: round;line-dasharray: 10, 4;}
   }
   [zoom=14]{
-    [type="4"]{ line-width: 1;line-color: #cccccc;line-cap: round;}
+    [type="4"]{ line-width: 1;line-color: #9c9c9c;line-cap: round;}
 	[type="5"]{ line-width: .5;line-color: #9c9c9c;line-cap: round;}
   	[type="6"]{ line-width: .57;line-color: #cdcdcd;line-cap: round;line-dasharray: 10, 4;}
  	[type="7"]{ line-width: .57;line-color: #6699cd;line-cap: round;line-dasharray: 10, 4;}
@@ -418,7 +437,7 @@ Map {
  	[type="8"]{ line-width: 5.25;line-color: #b2b2b2;line-cap: round;line-dasharray: 10, 4;}
   }
 }
-#road10k::outline{  
+#road10k::outline[zoom>=16][zoom<=18]{  
     [zoom=16]{   
     [type="1"]{ line-width: 5;line-color: #d6a7a7;line-cap: round;}
   	[type="2"]{ line-width: 5;line-color: #d6a7a7;line-cap: round;}
@@ -452,6 +471,7 @@ Map {
 }
 
 */ Styling of Labels/*
+
 #countries-label[SOVEREIGNT!='Philippines']{
   text-name: [NAME];
   text-face-name: 'Arial Regular';
@@ -496,6 +516,7 @@ Map {
   text-wrap-width: 50;
   text-wrap-before: true; 
   text-allow-overlap: true;
+  text-allow-overlap:true;
   [zoom=5]{ text-size: 12;text-character-spacing: 8;text-line-spacing: 15;}
   [zoom=6]{ text-size: 16;text-character-spacing: 15;text-line-spacing: 20;}
   [zoom=7]{ text-size: 16;text-character-spacing: 20;text-line-spacing: 25;} 
@@ -1115,4 +1136,28 @@ Map {
     [zoom>=9][zoom<=11]{text-size: 11;}
     [zoom>=12][zoom<=18]{text-size: 13;}
   }
+}
+#bajodemasinloc[zoom>=6]{
+  text-name: [name];
+  text-face-name: 'Arial Italic';
+  text-fill: #000;
+  text-size: 9;
+  text-allow-overlap:true;
+  text-dy:-3;
+  text-dx: 3;  
+  text-wrap-width: 60;
+  text-halo-fill: fadeout(white, 30%);
+  text-halo-radius: .5;   
+}
+#benhamrise[zoom>=6]{
+  text-name: [Name];
+  text-face-name: 'Arial Italic';
+  text-fill: #000;
+  text-size: 9;
+  text-allow-overlap:true;
+  text-dy:-3;
+  text-dx: 3;  
+  text-wrap-width: 60;
+  text-halo-fill: fadeout(white, 30%);
+  text-halo-radius: .5;   
 }
